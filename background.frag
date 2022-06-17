@@ -30,7 +30,7 @@ float triNoise3d(in vec3 p, in float spd)
 }
 float map(vec3 p) {
 	p.y *= 1.0;
-	float d = length(p) - 0.5 + 0.02 * triNoise3d(p * 2.0, 0.013);
+	float d = length(p) - 0.3 + 0.02 * triNoise3d(p * 1.6, 0.003);
 	return d;
 }
 
@@ -49,8 +49,8 @@ void main( void ) {
 	
 	float t0 = time * 0.11;
 	float t1 = t0 + 0.01;
-	float r0 = 0.5;
-	float k = 0.5 + 0.5 * sin(time * 0.2);
+	float r0 = 0.01;
+	float k = 0.65;
 	k = k*k*(3.0 - 2.0*k);
 	k = pow(k, 3.0);
 	float r1 = 0.5 + k * 2.0;
